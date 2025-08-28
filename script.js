@@ -9,7 +9,7 @@ console.log(2);//var変数定義のため実行順に合わせて前へ。
 
 function toOneDimension(previousValue, currentValue){
 console.log(4);//2回
-    return previousValue.concat(currentValue);
+    return currentValue.concat(previousValue);
     console.log(5);//実行されず。？？
 }
 var sampleArrayB = sampleArrayA.reduce(toOneDimension);
