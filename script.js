@@ -2,12 +2,20 @@ function toOneDimension(previousValue, currentValue){
 //4(2回)
     console.log(previousValue);
     //予想：[ 'A1', 'A2', 'A3' ]、[ 'B1', 'B2', 'B3' ]
-    //結果：[ 'A1', 'A2', 'A3' ]、[ 'A1', 'A2', 'A3', 'B1', 'B2', 'B3' ]??
+    //結果：[ 'A1', 'A2', 'A3' ]、[ 'A1', 'A2', 'A3', 'B1', 'B2', 'B3' ]
+    
+    //returnでの戻り値（変数）入れ替え後
+    //予想：[ 'A1', 'A2', 'A3' ]、[ 'B1', 'B2', 'B3', 'A1', 'A2', 'A3']
+    //結果：同上
     console.log(currentValue);
     //予想：[ 'B1', 'B2', 'B3' ]、[ 'C1', 'C2', 'C3' ]
     //結果：[ 'B1', 'B2', 'B3' ]、[ 'C1', 'C2', 'C3' ]
     
-    return previousValue.concat(currentValue);
+    //returnでの戻り値（変数）入れ替え後
+    //予想：[ 'B1', 'B2', 'B3' ]、[ 'C1', 'C2', 'C3' ]
+    //結果：同上
+
+    return currentValue.concat(previousValue);
 }//2
 
 var sampleArrayA = [
@@ -25,6 +33,10 @@ var sampleArrayB = sampleArrayA.reduce(toOneDimension);
 console.log(sampleArrayB);
 //予想：[ 'A1', 'A2', 'A3' …　'C1', 'C2', 'C3' ]
 //結果：[ 'A1', 'A2', 'A3' …　'C1', 'C2', 'C3' ]
+
+//returnでの戻り値（変数）入れ替え後
+//予想：[ 'C1', 'C2', 'C3' …　'A1', 'A2', 'A3']
+//結果：同上
 for (var counterVar = 0; counterVar < sampleArrayB.length; counterVar++){
 //6(9回)
     console.log(counterVar);
@@ -33,7 +45,5 @@ for (var counterVar = 0; counterVar < sampleArrayB.length; counterVar++){
     document.write('sampleArrayB['+counterVar+']:');
     document.write(sampleArrayB[counterVar]);
     console.log(sampleArrayB);
-    //予想：[ 'A1', 'A2', 'A3' …　'C1', 'C2', 'C3' ]
-    //結果：同上
     document.write('<br/>');
 }//7
